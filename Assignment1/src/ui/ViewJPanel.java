@@ -4,6 +4,8 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Employee;
 import model.EmployeeDetails;
 
@@ -23,7 +25,6 @@ public class ViewJPanel extends javax.swing.JPanel {
         initComponents();
         this.empDetails = empDetails;
         populateTable();
-        //displayEmployeeDetails();
     }
 
     /**
@@ -82,6 +83,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         lblStartDate.setText("Start Date:");
 
@@ -209,6 +215,17 @@ public class ViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmpIdActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if (tblEmpDetails.getSelectedRow() < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row to delete");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) tblEmpDetails.getModel();
+        Employee selectedEmployee = (Employee) model.getValueAt(tblEmpDetails.getSelectedRow(), 0);
+        empDetails.deleteEmplDetails(selectedEmployee);
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -246,7 +263,20 @@ public class ViewJPanel extends javax.swing.JPanel {
     }
 
     private void populateTable() {
-        defaultTableModel model = tblEmpDetails().getModel();
-        
+        DefaultTableModel model = (DefaultTableModel) tblEmpDetails.getModel();
+        model.setRowCount(0);
+        for(Employee emp: empDetails.getEmpDetailsList()){
+            Object []row = new Object[8];
+            row[0] = emp.getName();
+            row[1] = emp.getEmpId();
+            row[2] = emp.getGender();
+            row[3] = emp.getAge();
+            row[4] = emp.getLevel();
+            row[5] = emp.getStartDate();
+            row[6] = emp.getPosTitle();
+            row[7] = emp.getTeamInfo();
+            model.addRow(row);
+        }
+            
         }
 }

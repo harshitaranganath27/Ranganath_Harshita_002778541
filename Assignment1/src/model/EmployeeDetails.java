@@ -30,4 +30,8 @@ public class EmployeeDetails {
         empDetailsList.add(employee);
         return employee;
     }
+
+    public void deleteEmplDetails(Employee selectedEmployee) {
+        empDetailsList.remove(selectedEmployee);
+        }
 }
