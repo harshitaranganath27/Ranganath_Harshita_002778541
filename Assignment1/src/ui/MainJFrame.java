@@ -4,7 +4,7 @@
  */
 package ui;
 
-import model.Employee;
+import model.EmployeeDetails;
 
 /**
  *
@@ -16,11 +16,11 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-    Employee product;
+    EmployeeDetails empDetails;
     
     public MainJFrame() {
         initComponents();
-        product = new Employee();
+        empDetails = new EmployeeDetails();
     }
 
     /**
@@ -105,12 +105,12 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        CreateJPanel createPanel = new CreateJPanel(product);
+        CreateJPanel createPanel = new CreateJPanel(empDetails);
         splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        ViewJPanel viewPanel = new ViewJPanel(product);
+        ViewJPanel viewPanel = new ViewJPanel(empDetails);
         splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 

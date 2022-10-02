@@ -4,8 +4,10 @@
  */
 package ui;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Employee;
+import model.EmployeeDetails;
 
 /**
  *
@@ -16,11 +18,12 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    Employee employee;
+    EmployeeDetails empDetails;
     
-    public CreateJPanel(Employee employee) {
+    public CreateJPanel(EmployeeDetails empDetails) {
         initComponents();
-        this.employee = employee;
+        
+        this.empDetails = empDetails;
     }
 
     /**
