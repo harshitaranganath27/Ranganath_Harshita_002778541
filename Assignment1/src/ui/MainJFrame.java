@@ -4,7 +4,7 @@
  */
 package ui;
 
-import model.Product;
+import model.Employee;
 
 /**
  *
@@ -16,11 +16,11 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-    Product product;
+    Employee product;
     
     public MainJFrame() {
         initComponents();
-        product = new Product();
+        product = new Employee();
     }
 
     /**

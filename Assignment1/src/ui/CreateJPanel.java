@@ -5,7 +5,7 @@
 package ui;
 
 import javax.swing.JOptionPane;
-import model.Product;
+import model.Employee;
 
 /**
  *
@@ -16,11 +16,11 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    Product product;
+    Employee employee;
     
-    public CreateJPanel(Product product) {
+    public CreateJPanel(Employee employee) {
         initComponents();
-        this.product = product;
+        this.employee = employee;
     }
 
     /**
@@ -34,30 +34,38 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         lblTitle = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        lblDescr = new javax.swing.JLabel();
-        lblPrice = new javax.swing.JLabel();
-        lblAvailNum = new javax.swing.JLabel();
+        lblEmpId = new javax.swing.JLabel();
+        lblAge = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        txtDescr = new javax.swing.JTextField();
-        txtPrice = new javax.swing.JTextField();
-        txtAvailNum = new javax.swing.JTextField();
+        txtEmpId = new javax.swing.JTextField();
+        txtAge = new javax.swing.JTextField();
+        txtGender = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        lblStartDate = new javax.swing.JLabel();
+        lblLevel = new javax.swing.JLabel();
+        lblTeamInfo = new javax.swing.JLabel();
+        lblPosTitle = new javax.swing.JLabel();
+        txtLevel = new javax.swing.JTextField();
+        txtStartDate = new javax.swing.JTextField();
+        txtTeamInfo = new javax.swing.JTextField();
+        txtPosTitle = new javax.swing.JTextField();
 
         lblTitle.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Create Product");
+        lblTitle.setText("Create Employee Info");
 
         lblName.setText("Name:");
 
-        lblDescr.setText("Description:");
+        lblEmpId.setText("Employee ID:");
 
-        lblPrice.setText("Price:");
+        lblAge.setText("Age:");
 
-        lblAvailNum.setText("Availability:");
+        lblGender.setText("Gender:");
 
-        txtDescr.addActionListener(new java.awt.event.ActionListener() {
+        txtEmpId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDescrActionPerformed(evt);
+                txtEmpIdActionPerformed(evt);
             }
         });
 
@@ -65,6 +73,20 @@ public class CreateJPanel extends javax.swing.JPanel {
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
+            }
+        });
+
+        lblStartDate.setText("Start Date:");
+
+        lblLevel.setText("Level:");
+
+        lblTeamInfo.setText("Team Info:");
+
+        lblPosTitle.setText("Position Title:");
+
+        txtPosTitle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPosTitleActionPerformed(evt);
             }
         });
 
@@ -76,74 +98,115 @@ public class CreateJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblDescr)
+                    .addComponent(lblTeamInfo)
+                    .addComponent(lblPosTitle)
+                    .addComponent(lblEmpId)
                     .addComponent(lblName)
-                    .addComponent(lblPrice)
-                    .addComponent(lblAvailNum))
-                .addGap(58, 58, 58)
+                    .addComponent(lblGender)
+                    .addComponent(lblStartDate)
+                    .addComponent(lblAge)
+                    .addComponent(lblLevel))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                            .addComponent(txtDescr)
-                            .addComponent(txtPrice)
-                            .addComponent(txtAvailNum))
-                        .addGap(46, 46, 46))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(349, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtLevel)
+                            .addComponent(txtName)
+                            .addComponent(txtEmpId)
+                            .addComponent(txtAge)
+                            .addComponent(txtGender)
+                            .addComponent(txtTeamInfo)
+                            .addComponent(txtPosTitle)
+                            .addComponent(txtStartDate))
+                        .addGap(46, 46, 46))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtEmpId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblEmpId, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblStartDate))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDescr, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDescr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLevel))
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPrice))
-                .addGap(18, 18, 18)
+                    .addComponent(lblTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAvailNum)
-                    .addComponent(txtAvailNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(lblPosTitle)
+                    .addComponent(txtPosTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addComponent(btnSave)
+                .addGap(29, 29, 29))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDescrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescrActionPerformed
+    private void txtEmpIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescrActionPerformed
+    }//GEN-LAST:event_txtEmpIdActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        product.setName(txtName.getText());
-        product.setDescr(txtDescr.getText());
-        product.setAvailNum(txtAvailNum.getText());
-        product.setPrice(txtPrice.getText());
-        
+        employee.setName(txtName.getText());
+        employee.setEmpId(txtEmpId.getText());
+        employee.setAge(txtAge.getText());
+        employee.setGender(txtGender.getText());
+        employee.setStartDate(txtStartDate.getText());
+        employee.setTeamInfo(txtTeamInfo.getText());
+        employee.setPosTitle(txtPosTitle.getText());
+        employee.setLevel(txtLevel.getText());
         JOptionPane.showMessageDialog(this,"Product Information Saved");
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtPosTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPosTitleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPosTitleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
-    private javax.swing.JLabel lblAvailNum;
-    private javax.swing.JLabel lblDescr;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblEmpId;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblLevel;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblPrice;
+    private javax.swing.JLabel lblPosTitle;
+    private javax.swing.JLabel lblStartDate;
+    private javax.swing.JLabel lblTeamInfo;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTextField txtAvailNum;
-    private javax.swing.JTextField txtDescr;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtEmpId;
+    private javax.swing.JTextField txtGender;
+    private javax.swing.JTextField txtLevel;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtPosTitle;
+    private javax.swing.JTextField txtStartDate;
+    private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
 }
