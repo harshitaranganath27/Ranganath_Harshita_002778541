@@ -24,4 +24,10 @@ public class EmployeeDetails {
     public void setEmpDetailsList(ArrayList<Employee> empDetailsList) {
         this.empDetailsList = empDetailsList;
     }
+    
+    public Employee addNewEmployeeDetails(){
+        Employee employee = new Employee();
+        empDetailsList.add(employee);
+        return employee;
+    }
 }

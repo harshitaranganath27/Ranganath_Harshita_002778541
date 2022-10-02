@@ -176,15 +176,36 @@ public class CreateJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtEmpIdActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        employee.setName(txtName.getText());
-        employee.setEmpId(txtEmpId.getText());
-        employee.setAge(txtAge.getText());
-        employee.setGender(txtGender.getText());
-        employee.setStartDate(txtStartDate.getText());
-        employee.setTeamInfo(txtTeamInfo.getText());
-        employee.setPosTitle(txtPosTitle.getText());
-        employee.setLevel(txtLevel.getText());
+        String empName = txtName.getText();
+        String empId = txtEmpId.getText();
+        String empAge = txtAge.getText();
+        String empGender = txtGender.getText();
+        String empStartDate = txtStartDate.getText();
+        String empTeamInfo = txtTeamInfo.getText();
+        String empPosTitle = txtPosTitle.getText();
+        String empLevel = txtLevel.getText();
+        Employee employee = empDetails.addNewEmployeeDetails();
+        employee.setAge(empAge);
+        employee.setEmpId(empId);
+        employee.setGender(empGender);
+        employee.setLevel(empLevel);
+        employee.setPosTitle(empPosTitle);
+        employee.setStartDate(empStartDate);
+        employee.setTeamInfo(empTeamInfo);
+        employee.setName(empName);
+        
         JOptionPane.showMessageDialog(this,"Product Information Saved");
+        
+        txtName.setText("");
+        txtEmpId.setText("");
+        txtAge.setText("");
+        txtGender.setText("");
+        txtStartDate.setText("");
+        txtTeamInfo.setText("");
+        txtPosTitle.setText("");
+        txtLevel.setText("");
+        
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtPosTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPosTitleActionPerformed
