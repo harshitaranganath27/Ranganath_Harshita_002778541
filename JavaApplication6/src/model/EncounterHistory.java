@@ -8,11 +8,30 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sirius
+ * @author harshitaranganath
  */
 public class EncounterHistory {
-    private ArrayList<Encounter> encHist;
+    private ArrayList<Encounter> Encdir;    
     
-         
+    public ArrayList<Encounter> getEncdir() {
+        return Encdir;
+    }
+
+    public void setEncdir(ArrayList<Encounter> Encdir) {
+        this.Encdir = Encdir;
+    }
+
+
+    public EncounterHistory(){
+        this.Encdir = new ArrayList<>();
+    }    
+
+    public Encounter addEncounter(){
+
+    Encounter newEnc = new Encounter();
+    Encdir.add(newEnc);
+    return newEnc;
+    
+    }          
     
 }

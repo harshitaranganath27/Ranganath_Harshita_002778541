@@ -4,10 +4,46 @@
  */
 package model;
 
+import java.util.ArrayList;
 /**
  *
- * @author sirius
+ * @author harshitaranganath
  */
-public class PersonDirectory {
+public class PersonDirectory{
+    private ArrayList<Person> allPeople;    
+    private House house;
+
+    public ArrayList<Person> getAllPeople() {
+        return allPeople;
+    }
+
+    public void setAllPeople(ArrayList<Person> allPeople) {
+        this.allPeople = allPeople;
+    }
+    
+    public void deletePerson(Person person) {
+        allPeople.remove(person);
+    }    
+    public PersonDirectory(){    
+        this.allPeople = new ArrayList<Person>();    
+    }
+    
+    public Person addNewPerson(){
+        Person newPerson = new Person();
+        allPeople.add(newPerson);
+        return newPerson;
+    }          
+    public ArrayList<Person> searchPerson(String city1)
+    {
+        ArrayList<Person> searchPerson = new ArrayList();
+        for(Person city: allPeople)
+        {
+            if(city.getNameOfPerson().toLowerCase().equals(city1.toLowerCase()))
+            {  
+                searchPerson.add(city);
+            }
+        }
+        return searchPerson;
+    }    
     
 }

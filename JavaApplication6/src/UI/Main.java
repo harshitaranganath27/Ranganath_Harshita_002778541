@@ -1,22 +1,160 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package UI;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import model.Credentials;
+import model.CredentialDirectory;
+import model.House;
+import model.Community;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import model.City;
+import model.Operations;
+import model.MainSys;
+import javax.swing.JCheckBox;
 
 /**
  *
- * @author sirius
+ * @author harshitaranganath
  */
-public class Main extends javax.swing.JPanel {
+public class Main extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJPanel
+     * Creates new form Main
      */
+    private String username;
+    private String password;
+    CredentialDirectory allcredentials;
+    Operations crudops1;
+    House hse;
+    Community comm;
+    City city1;
+    MainSys mainSystem;
+
     public Main() {
         initComponents();
+        allcredentials = new CredentialDirectory();
+        this.mainSystem = new MainSys();
+    }
+
+    public Main(MainSys mainSystem, CredentialDirectory allcredentials) {
+        initComponents();
+        this.allcredentials = allcredentials;
+        this.city1 = city1;
+        this.mainSystem = mainSystem;
+    }
+
+    private Boolean checkBlankInput() {
+        if (txtuname.getText().length() == 0 || txtpassword.getPassword().length == 0 || (chkbxSysAdmin.getText().length() == 0 && chkbxHospAdmin.getText().length() == 0 && chkbxPatient.getText().length() == 0 && chkbxDoctor.getText().length() == 0 && chkbxCommAdmin.getText().length() == 0)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private Boolean checkcred() {
+        //CredentialDirectory allcredentials = new CredentialDirectory();
+        String username = txtuname.getText();
+        String password = String.valueOf(txtpassword.getPassword());
+        if (chkbxSysAdmin.isSelected()) {
+            String role = chkbxSysAdmin.getText();
+            ArrayList<Credentials> idcheck = allcredentials.searchCredentials(username, password, role);
+            if (allcredentials.checkSysAdminCred(username, password, role)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (chkbxPatient.isSelected()) {
+            String role = chkbxPatient.getText();
+            ArrayList<Credentials> idcheck = allcredentials.searchCredentials(username, password, role);
+            if (idcheck.contains(username) && idcheck.contains(password) && idcheck.contains(role)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (chkbxCommAdmin.isSelected()) {
+
+            String role = chkbxCommAdmin.getText();
+            boolean idcheck = allcredentials.checkCommAdminCred(username, password, role);
+            if (idcheck) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (chkbxDoctor.isSelected()) {
+            String role = chkbxDoctor.getText();
+            ArrayList<Credentials> idcheck = allcredentials.searchCredentials(username, password, role);
+            if (idcheck.contains(username) && idcheck.contains(password) && idcheck.contains(role)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (chkbxHospAdmin.isSelected()) {
+            String role = chkbxHospAdmin.getText();
+            ArrayList<Credentials> idcheck = allcredentials.searchCredentials(username, password, role);
+            if (idcheck.contains(username) && idcheck.contains(password) && idcheck.contains(role)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+    }
+
+    public String getuname() {
+        return String.valueOf(txtuname.getText());
+    }
+
+    public String getpass() {
+        return String.valueOf(txtpassword.getPassword());
+    }
+
+    public String getrole() {
+        if (chkbxDoctor.isSelected()) {
+            return chkbxDoctor.getText();
+        } else if (chkbxCommAdmin.isSelected()) {
+            return chkbxCommAdmin.getText();
+        } else if (chkbxPatient.isSelected()) {
+            return chkbxPatient.getText();
+        } else if (chkbxHospAdmin.isSelected()) {
+            return chkbxHospAdmin.getText();
+        } else {
+            return chkbxSysAdmin.getText();
+        }
+    }
+
+    public void close() {
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+
+    }
+
+    private boolean checkbox() {
+        JCheckBox[] newList = new JCheckBox[5];
+        newList[0] = chkbxCommAdmin;
+        newList[1] = chkbxHospAdmin;
+        newList[2] = chkbxDoctor;
+        newList[3] = chkbxPatient;
+        newList[4] = chkbxSysAdmin;
+        int k = 0;
+        for (int i = 0; i < newList.length; i++) {
+            if (newList[i].isSelected()) {
+                k += 1;
+            }
+        }
+        if (k == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -28,117 +166,292 @@ public class Main extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel = new javax.swing.JPanel();
-        lblUsername = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
-        submitButton = new javax.swing.JButton();
-        username = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        loginPanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtuname = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        chkbxPatient = new javax.swing.JCheckBox();
+        chkbxSysAdmin = new javax.swing.JCheckBox();
+        chkbxCommAdmin = new javax.swing.JCheckBox();
+        chkbxHospAdmin = new javax.swing.JCheckBox();
+        chkbxDoctor = new javax.swing.JCheckBox();
+        btnAuthenticate = new javax.swing.JButton();
+        txtpassword = new javax.swing.JPasswordField();
+        mainPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
-        lblUsername.setText("Username");
+        jLabel1.setText("jLabel1");
 
-        lblPassword.setText("Password");
+        jLabel2.setText("jLabel2");
 
-        submitButton.setText("Submit");
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login Page");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        loginPanel.setBackground(new java.awt.Color(51, 51, 255));
+        loginPanel.setForeground(new java.awt.Color(0, 102, 255));
+        loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Login");
+        loginPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        jLabel5.setText("Username");
+        loginPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+        jLabel6.setText("Password");
+        loginPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        txtuname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
+                txtunameActionPerformed(evt);
             }
         });
+        loginPanel.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 130, -1));
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel7.setText("Role");
+        loginPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        chkbxPatient.setText("Patient");
+        chkbxPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                chkbxPatientActionPerformed(evt);
             }
         });
+        loginPanel.add(chkbxPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
 
-        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
-        panel.setLayout(panelLayout);
-        panelLayout.setHorizontalGroup(
-            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLayout.createSequentialGroup()
-                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUsername)
-                            .addComponent(lblPassword))
-                        .addGap(24, 24, 24)
-                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1)
-                            .addComponent(username)))
-                    .addGroup(panelLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(submitButton)))
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
-        panelLayout.setVerticalGroup(
-            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(submitButton)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
+        chkbxSysAdmin.setText("System Admin");
+        chkbxSysAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxSysAdminActionPerformed(evt);
+            }
+        });
+        loginPanel.add(chkbxSysAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        chkbxCommAdmin.setText("Community Admin");
+        chkbxCommAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxCommAdminActionPerformed(evt);
+            }
+        });
+        loginPanel.add(chkbxCommAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+
+        chkbxHospAdmin.setText("Hospital Admin");
+        chkbxHospAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxHospAdminActionPerformed(evt);
+            }
+        });
+        loginPanel.add(chkbxHospAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+
+        chkbxDoctor.setText("Doctor");
+        chkbxDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxDoctorActionPerformed(evt);
+            }
+        });
+        loginPanel.add(chkbxDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+
+        btnAuthenticate.setBackground(new java.awt.Color(102, 102, 255));
+        btnAuthenticate.setText("Authenticate");
+        btnAuthenticate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAuthenticateActionPerformed(evt);
+            }
+        });
+        loginPanel.add(btnAuthenticate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
+        loginPanel.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 130, -1));
+        loginPanel.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-350, -160, 1070, 600));
+
+        getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 360, 320));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 600));
+
+        setSize(new java.awt.Dimension(1084, 607));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void chkbxPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxPatientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_chkbxPatientActionPerformed
 
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+    private void chkbxSysAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxSysAdminActionPerformed
         // TODO add your handling code here:
-        String userName = lblUsername.getText();
-        String pWord = lblPassword.getText();
-        String role = checkRole(userName,pWord);
-        if (!role.equals("Not found")) {
-                JOptionPane.showMessageDialog(this, "Login Successful for" + role);
+
+    }//GEN-LAST:event_chkbxSysAdminActionPerformed
+
+    private void chkbxCommAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxCommAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkbxCommAdminActionPerformed
+
+    private void chkbxHospAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxHospAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkbxHospAdminActionPerformed
+
+    private void chkbxDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxDoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkbxDoctorActionPerformed
+
+    private void btnAuthenticateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuthenticateActionPerformed
+        // TODO add your handling code here:
+        if (checkBlankInput()) {
+            boolean checkcred = true;
+            if (checkcred && checkbox()) {
+                Credentials cred = new Credentials();
+                String uname = txtuname.getText();
+                String pass = String.valueOf(txtpassword.getPassword());
+
+                if (chkbxSysAdmin.isSelected()) {
+
+                    String role = chkbxSysAdmin.getText();
+                    cred.setRole(role);
+                    chkbxSysAdmin.setSelected(false);
+                    boolean sysadmincheck = allcredentials.checkSysAdminCred(uname, pass, role);
+                    if (sysadmincheck) {
+                        new Main().setVisible(false);
+                        JFrame frame = new JFrame();
+                        frame.setPreferredSize(new Dimension(1070, 600));
+                        SystemAdmin welcomeadmin = new SystemAdmin(mainSystem, allcredentials);
+                        frame.setSize(1070, 600);
+                        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //frame.setUndecorated(true); 
+                        frame.setVisible(true);
+                        frame.getContentPane().add(welcomeadmin);
+                        frame.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Please Check your credentials");
+                    }
+                } else if (chkbxPatient.isSelected()) {
+                    String role = chkbxPatient.getText();
+                    cred.setRole(role);
+                    chkbxPatient.setSelected(false);
+                    boolean commadmincheck = allcredentials.checkCommAdminCred(uname, pass, role);
+                    if (commadmincheck) {
+                        new Main().setVisible(false);
+                        JFrame frame = new JFrame();
+                        frame.setPreferredSize(new Dimension(1070, 600));
+                        CreatePatient welcomeadmin = new CreatePatient(mainSystem, allcredentials);
+
+                        frame.setSize(1070, 600);
+                        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                        frame.setVisible(true);
+                        frame.getContentPane().add(welcomeadmin);
+                        frame.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Please Check your credentials");
+                    }
+                } else if (chkbxCommAdmin.isSelected()) {
+                    String role = chkbxCommAdmin.getText();
+                    cred.setRole(role);
+                    chkbxCommAdmin.setSelected(false);
+                    boolean commadmincheck = allcredentials.checkCommAdminCred(uname, pass, role);
+                    if (commadmincheck) {
+                        new Main().setVisible(false);
+                        JFrame frame = new JFrame();
+                        CityAdmin welcomeadmin = new CityAdmin(mainSystem, allcredentials);
+                        frame.setSize(1070, 600);
+                        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+                        frame.setVisible(true);
+                        frame.getContentPane().add(welcomeadmin);
+                        frame.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Please Check your credentials");
+                    }
+                } else if (chkbxDoctor.isSelected()) {
+                    String role = chkbxDoctor.getText();
+                    cred.setRole(role);
+                    chkbxDoctor.setSelected(false);
+                    cred.setRole(role);
+                    chkbxDoctor.setSelected(false);
+                    boolean commadmincheck = allcredentials.checkCommAdminCred(uname, pass, role);
+                    if (commadmincheck) {
+                        new Main().setVisible(false);
+                        JFrame frame = new JFrame();
+                        DoctorPatientCreate welcomeadmin = new DoctorPatientCreate(mainSystem, allcredentials);
+                        frame.setSize(900, 600);
+                        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                        frame.setVisible(true);
+                        frame.getContentPane().add(welcomeadmin);
+                        frame.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Please Check your credentials");
+                    }
+
+                } else if (chkbxHospAdmin.isSelected()) {
+                    String role = chkbxHospAdmin.getText();
+                    cred.setRole(role);
+                    chkbxHospAdmin.setSelected(false);
+                    cred.setRole(role);
+                    chkbxHospAdmin.setSelected(false);
+                    boolean commadmincheck = allcredentials.checkCommAdminCred(uname, pass, role);
+
+                    if (commadmincheck) {
+                        new Main().setVisible(false);
+                        JFrame frame = new JFrame();
+                        HospitalAdmin welcomeadmin = new HospitalAdmin(mainSystem, allcredentials);
+                        frame.setSize(1070, 600);
+                        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //frame.setUndecorated(true); 
+                        frame.setVisible(true);
+                        frame.getContentPane().add(welcomeadmin);
+                        frame.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Please Check your credentials");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Please Input a Role");
+                    String role = "";
+                }
+                cred.setPassword(pass);
+                cred.setUsername(uname);
+                txtuname.setText("");
+                txtpassword.setText("");
+                Main mj = new Main();
+                mj.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Incorrect Credentials or Role");
+            }
         } else {
-                JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+
+            JOptionPane.showMessageDialog(this, "Please Fill the fields");
         }
-    }//GEN-LAST:event_submitButtonActionPerformed
-   
-    private String checkRole(String uname,String password){
-        String role;
-        if(uname == "pat" && password == "12345"){
-            role = "Patient";
-        }
-        else if(uname == "admin" && password == "12345"){
-            role = "SysAdmin";
-        }
-        else if(uname == "com" && password == "12345"){
-            role = "CommunityAdmin";
-        }
-        else if (uname == "hosp" && password == "12345"){
-            role = "HospitalAdmin";
-        }
-        else if (uname == "doc" && password == "12345"){
-            role = "Doctor";
-        }
-        else {
-            role = "Not Found";
-        } 
-        return role;
-    }
+    }//GEN-LAST:event_btnAuthenticateActionPerformed
+
+    private void txtunameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtunameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtunameActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
@@ -147,11 +460,23 @@ public class Main extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblUsername;
-    private javax.swing.JPanel panel;
-    private javax.swing.JButton submitButton;
-    private javax.swing.JTextField username;
+    private javax.swing.JButton btnAuthenticate;
+    private javax.swing.JCheckBox chkbxCommAdmin;
+    private javax.swing.JCheckBox chkbxDoctor;
+    private javax.swing.JCheckBox chkbxHospAdmin;
+    private javax.swing.JCheckBox chkbxPatient;
+    private javax.swing.JCheckBox chkbxSysAdmin;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel loginPanel;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JPasswordField txtpassword;
+    private javax.swing.JTextField txtuname;
     // End of variables declaration//GEN-END:variables
+
 }

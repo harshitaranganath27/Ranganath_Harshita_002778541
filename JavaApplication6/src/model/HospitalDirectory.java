@@ -4,10 +4,30 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author sirius
+ * @author harshitaranganath
  */
-public class HospitalDirectory {
+public class HospitalDirectory extends City{
+    private ArrayList<Hospital> hospDir;
+
+    public ArrayList<Hospital> getHospDir() {
+        return hospDir;
+    }
+
+    public void setHospDir(ArrayList<Hospital> hospDir) {
+        this.hospDir = hospDir;
+    }
     
+    public HospitalDirectory() {
+        this.hospDir = new ArrayList<>();
+    }
+    
+    public Hospital addNewHosp(){
+        Hospital newHosp = new Hospital();
+        hospDir.add(newHosp);
+        return newHosp;
+    }      
 }
