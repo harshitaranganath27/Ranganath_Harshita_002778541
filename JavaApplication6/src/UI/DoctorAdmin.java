@@ -37,11 +37,11 @@ public class DoctorAdmin extends javax.swing.JPanel {
         setBackground(new java.awt.Color(242, 238, 203));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Enter patient details");
+        jLabel1.setText("Enter Patient Details");
 
         jLabel3.setText("Patient Name");
 
-        jLabel4.setText("Patient ID");
+        jLabel4.setText("ID");
 
         jLabel5.setText("Patient Contact");
 
@@ -66,7 +66,7 @@ public class DoctorAdmin extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addGap(57, 57, 57)
                             .addComponent(txtpatientname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(677, Short.MAX_VALUE))
+                .addContainerGap(676, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

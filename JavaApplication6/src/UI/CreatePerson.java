@@ -129,7 +129,7 @@ public class CreatePerson extends javax.swing.JPanel {
 
         jLabel6.setText("Date of Birth");
 
-        jLabel7.setText("Contact");
+        jLabel7.setText("Contact Number");
 
         jLabel8.setText("Designation");
 
@@ -157,7 +157,7 @@ public class CreatePerson extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Name ID", "Gender", "Date of Birth", "Contact", "Designation", "Address"
+                "Name", "ID", "Gender", "Date of Birth", "Contact", "Designation", "Address"
             }
         ) {
             Class[] types = new Class [] {
@@ -200,7 +200,7 @@ public class CreatePerson extends javax.swing.JPanel {
 
         combobxAdd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel10.setText("Name Id");
+        jLabel10.setText("ID");
 
         jLabel11.setText("Name");
 
@@ -250,7 +250,7 @@ public class CreatePerson extends javax.swing.JPanel {
                             .addComponent(txtDob)
                             .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                             .addComponent(combobxAdd, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton1)
