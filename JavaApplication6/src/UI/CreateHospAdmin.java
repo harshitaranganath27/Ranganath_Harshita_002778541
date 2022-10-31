@@ -382,7 +382,7 @@ public class CreateHospAdmin extends javax.swing.JPanel {
 
     private void btnpopulateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpopulateActionPerformed
         // TODO add your handling code here:
-        popTable();
+        populateTable();
     }//GEN-LAST:event_btnpopulateActionPerformed
 
     private void comboBoxCommunity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCommunity1ActionPerformed
@@ -456,7 +456,7 @@ public class CreateHospAdmin extends javax.swing.JPanel {
             City SelectedRecords = (City) m2.getValueAt(SelectedRow, 0);
             SelectedRecords.deleteHospital(SelectedRecords.getAllHospitals().get(SelectedRow));
             JOptionPane.showMessageDialog(this, "Selected row has been deleted");
-            popTable();
+            populateTable();
         }
 
 
@@ -553,7 +553,7 @@ public class CreateHospAdmin extends javax.swing.JPanel {
         }
     }
 
-    private void popTable() {
+    private void populateTable() {
         tblRecords.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
         DefaultTableModel model = (DefaultTableModel) tblRecords.getModel();
         model.setRowCount(0);

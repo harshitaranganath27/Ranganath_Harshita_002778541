@@ -37,9 +37,10 @@ public class CityAdmin extends javax.swing.JPanel {
         btnComm = new javax.swing.JButton();
         btnHosp = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 0));
 
         btnComm.setText("Community");
         btnComm.addActionListener(new java.awt.event.ActionListener() {
@@ -81,42 +82,27 @@ public class CityAdmin extends javax.swing.JPanel {
 
         Splitpane.setLeftComponent(jPanel1);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Welcome Community Admin");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel2.setText("Manage Communities and Hospitals");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Click any of the features");
+        jLabel2.setFont(new java.awt.Font("American Typewriter", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 0));
+        jLabel2.setText("Select an option to manage Communities and Hospitals");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(373, 373, 373)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(450, 450, 450)
-                        .addComponent(jLabel3)))
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addGap(235, 235, 235)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(75, 75, 75)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addContainerGap(973, Short.MAX_VALUE))
+                .addContainerGap(1008, Short.MAX_VALUE))
         );
 
         Splitpane.setRightComponent(jPanel2);
@@ -150,9 +136,7 @@ public class CityAdmin extends javax.swing.JPanel {
     private javax.swing.JSplitPane Splitpane;
     private javax.swing.JButton btnComm;
     private javax.swing.JButton btnHosp;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

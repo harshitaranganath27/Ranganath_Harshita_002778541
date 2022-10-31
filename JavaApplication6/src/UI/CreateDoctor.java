@@ -84,6 +84,8 @@ public class CreateDoctor extends javax.swing.JPanel {
         btnEdit = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 204));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Doctors");
 
@@ -238,8 +240,6 @@ public class CreateDoctor extends javax.swing.JPanel {
             }
         });
 
-        jLabel12.setText("Create Doctors");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -369,7 +369,7 @@ public class CreateDoctor extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(txtSpeciality1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {comboBoxhosp, txtContact, txtDoc, txtId, txtSpeciality});
@@ -430,7 +430,7 @@ public class CreateDoctor extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        popTable();
+        populateTable();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void comboBoxhosp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxhosp1ActionPerformed
@@ -485,7 +485,7 @@ public class CreateDoctor extends javax.swing.JPanel {
             Doctor SelectedRecords = (Doctor) m2.getValueAt(SelectedRow, 0);
             mainSystem.getDoctorDir().deleteDoc(SelectedRecords);
             JOptionPane.showMessageDialog(this, "Selected row has been deleted");
-            popTable();
+            populateTable();
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -577,7 +577,7 @@ public class CreateDoctor extends javax.swing.JPanel {
         }
     }
 
-    private void popTable() {
+    private void populateTable() {
         tblRecords.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
         DefaultTableModel m1 = (DefaultTableModel) tblRecords.getModel();
         m1.setRowCount(0);

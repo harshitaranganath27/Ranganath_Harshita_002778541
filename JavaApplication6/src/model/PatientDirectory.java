@@ -37,5 +37,23 @@ public class PatientDirectory {
         allPatients.add(newpatient);
         return newpatient;
     }
+    public boolean checkPatientd(int id)
+    {
+        ArrayList<Patient> searchPat = new ArrayList();
+        for(Patient cty: allPatients)
+        {
+            if(cty.getPatientId()==id)
+            {
 
+                searchPat.add(cty);
+               
+            }
+        }
+        if(searchPat.isEmpty()){
+            
+            return false;
+        }else{
+            return true;
+        }
+    }  
 }

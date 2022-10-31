@@ -92,6 +92,8 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRecords = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 204));
+
         jLabel1.setBackground(new java.awt.Color(232, 225, 225));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Record Patient details");
@@ -158,14 +160,14 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
 
         jLabel14.setText("Encounter Details");
 
-        jButton2.setText("View");
+        jButton2.setText("View Details");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Delete");
+        jButton3.setText("Delete entries");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -346,6 +348,8 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        boolean b23 = ((txtPatientid.getText().length() != 0) && (txtContact.getText().length() != 0) && (txtrr.getText().length() != 0) && (txtbp.getText().length() != 0) && (txtbt.getText().length() != 0) && (txtComments.getText().length() != 0) && (datechooser.getDate().toString().length() != 0));
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String name = ComboBoxPatient.getSelectedItem().toString();
         int id1 = Integer.valueOf(txtPatientid.getText());
@@ -354,30 +358,45 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
         Float bp = Float.valueOf(txtbp.getText());
         Float bt = Float.valueOf(txtbt.getText());
         Date dt = datechooser.getDate();
+        String maindate = dateFormat.format(dt);
         String co = txtComments.getText();
         int id2 = Integer.valueOf(txtEncid.getText());
+        Date datex = null;
 
-        boolean b23 = ((txtPatientid.getText().length() != 0) && (txtContact.getText().length() != 0) && (txtrr.getText().length() != 0) && (txtbp.getText().length() != 0) && (txtbt.getText().length() != 0) && (txtComments.getText().length() != 0) && (datechooser.getDate().toString().length() != 0));
         if ((((bp > 50) && (bp < 200)) && ((rr > 0) && (rr < 100)) && ((bt >= 37) && (bt <= 110))) || b23) {
-            Patient pt = mainSystem.getPatientDir().addNewPatient();
-            pt.setContactInfo(con);
-            pt.setNameOfPatient(name);
-            pt.setPatientId(id1);
+            if (mainSystem.getPatientDir().checkPatientd(id1)) {
+                JOptionPane.showMessageDialog(this, "The Patient ID is already in use");
+            } else {
+                Patient pt = mainSystem.getPatientDir().addNewPatient();
+                pt.setContactInfo(con);
+                pt.setNameOfPatient(name);
+                pt.setPatientId(id1);
 
-            Encounter enc = new Encounter();
-            enc.setEncountercomments(co);
-            enc.setEncounterdate(dt);
-            enc.setEncounterid(id2);
+                Encounter enc = new Encounter();
+                enc.setEncountercomments(co);
+                enc.setEncounterdate(dt);
+                enc.setEncounterid(id2);
 
-            VitalSigns vs = new VitalSigns();
-            vs.setBloodPressure(bp);
-            vs.setBodyTemp(bt);
-            vs.setRr(rr);
-            enc.setVs(vs);
+                VitalSigns vs = new VitalSigns();
+                vs.setBloodPressure(bp);
+                vs.setBodyTemp(bt);
+                vs.setRr(rr);
+                enc.setVs(vs);
 
-            pt.getEncDir().add(enc);
-
-            for (Patient pat : mainSystem.getPatientDir().getAllPatients()) {
+                pt.getEncDir().add(enc);
+                datechooser.setDate(datex);
+                enc.setEncountercomments(co);
+                txtPatientid.setText("");
+                enc.setEncounterdate(dt);
+                txtrr.setText("");
+                enc.setEncounterid(id2);
+                txtbp.setText("");
+                txtbt.setText("");
+                txtPatientid.setText("");
+                txtContact.setText("");
+                txtComments.setText("");
+                txtEncid.setText("");
+                popPatients();
             }
         } else {
             JOptionPane.showMessageDialog(this, "The Vital Signs are Incorrect");
@@ -442,14 +461,14 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
             Patient SelectedRecords = (Patient) m2.getValueAt(SelectedRow, 0);
             mainSystem.getPatientDir().deletePatient(SelectedRecords);//.deleteHospital(SelectedRecords.getAllhospitals().get(SelectedRow));
             JOptionPane.showMessageDialog(this, "Selected row has been deleted");
-            popTable();
+            populateTable();
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnpopulateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpopulateActionPerformed
         // TODO add your handling code here:
-        popTable();
+        populateTable();
     }//GEN-LAST:event_btnpopulateActionPerformed
 
     private void txtContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContactActionPerformed
@@ -503,7 +522,7 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
         }
     }
 
-    private void popTable() {
+    private void populateTable() {
         tblRecords.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
         DefaultTableModel m1 = (DefaultTableModel) tblRecords.getModel();
         m1.setRowCount(0);

@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.City;
@@ -233,37 +234,6 @@ public class CreatePerson extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNameid1)
-                            .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel12))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtGender1)
-                            .addComponent(txtDob1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(66, 66, 66)
-                                .addComponent(txtContact1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(combobxAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addGap(41, 41, 41)
-                                .addComponent(txtDesignation1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
@@ -291,20 +261,48 @@ public class CreatePerson extends javax.swing.JPanel {
                                 .addGap(215, 215, 215))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(156, 156, 156)
-                .addComponent(btnCreate)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(45, 45, 45))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCreate)
+                                .addGap(24, 24, 24)
+                                .addComponent(btnEdit))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel10))
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNameid1)
+                                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtGender1)
+                            .addComponent(txtDob1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(66, 66, 66)
+                                .addComponent(txtContact1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(combobxAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(41, 41, 41)
+                                .addComponent(txtDesignation1)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnEdit)
-                        .addGap(483, 483, 483))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(341, 341, 341))))
+                .addComponent(jLabel1)
+                .addGap(341, 341, 341))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtContact, txtDesignation, txtDob, txtGender, txtName, txtNameid});
@@ -354,7 +352,9 @@ public class CreatePerson extends javax.swing.JPanel {
                             .addComponent(jButton2)
                             .addComponent(btnpopulate))))
                 .addGap(18, 18, 18)
-                .addComponent(btnCreate)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreate)
+                    .addComponent(btnEdit))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -385,9 +385,7 @@ public class CreatePerson extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(txtDesignation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(btnEdit)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -423,14 +421,14 @@ public class CreatePerson extends javax.swing.JPanel {
             Person SelectedRecords = (Person) defaultModel.getValueAt(SelectedRow, 0);
             mainSystem.getPersonDir().deletePerson(SelectedRecords);
             JOptionPane.showMessageDialog(this, "Selected row has been deleted");
-            popTable();
+            populateTable();
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnpopulateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpopulateActionPerformed
         // TODO add your handling code here:
-        popTable();
+        populateTable();
     }//GEN-LAST:event_btnpopulateActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
@@ -483,24 +481,20 @@ public class CreatePerson extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please Select a row");
         } else {
             if (fieldcheck1()) {
-                DefaultTableModel m2 = (DefaultTableModel) tblRecords.getModel();
-                Person SelectedRecords = (Person) m2.getValueAt(SelectedRow, 0);
-                ArrayList<Person> searchComm = mainSystem.getPersonDir().searchPerson(SelectedRecords.getNameOfPerson());
+                DefaultTableModel m2 = (DefaultTableModel)tblRecords.getModel();
+                //System.out.println(m2);
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                Person SelectedRecords = (Person) m2.getValueAt(SelectedRow, 0);
+                //ArrayList<House> searchHouse = new ArrayList();
+                ArrayList<Person> searchComm = mainSystem.getPersonDir().searchPerson(SelectedRecords.getNameOfPerson());
                 searchComm.get(0).setNameOfPerson(txtName.getText());
                 searchComm.get(0).setIdentification(Integer.valueOf(txtNameid.getText()));
                 searchComm.get(0).setContactDetails(Long.valueOf(txtContact1.getText()));
                 searchComm.get(0).setGender(txtGender1.getText());
-                try { 
-                    searchComm.get(0).setDob(dateFormat.parse(txtDob.getText()));
-                    
-                } catch (ParseException ex) {
-                    JOptionPane.showMessageDialog(this, "Please Input Correct Date Format"); 
-                }
                 House hse = new House();
                 hse.setHouseAddress(combobxAdd.getSelectedItem().toString());
-                searchComm.get(0).setHouse(hse);                           
-                JOptionPane.showMessageDialog(this, "Data has been updated");
+                searchComm.get(0).setHouse(hse);                          
+                JOptionPane.showMessageDialog(this, "Data has been updated"); 
             } else {
                 JOptionPane.showMessageDialog(this, "Please Fill all the fields");
             }
@@ -591,7 +585,7 @@ public class CreatePerson extends javax.swing.JPanel {
 
     }
 
-    private void popTable() {
+    private void populateTable() {
         tblRecords.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
         DefaultTableModel model = (DefaultTableModel) tblRecords.getModel();
         model.setRowCount(0);
