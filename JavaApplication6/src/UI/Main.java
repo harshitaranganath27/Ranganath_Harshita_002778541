@@ -169,11 +169,9 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         loginPanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtuname = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         chkbxPatient = new javax.swing.JCheckBox();
         chkbxSysAdmin = new javax.swing.JCheckBox();
         chkbxCommAdmin = new javax.swing.JCheckBox();
@@ -182,7 +180,12 @@ public class Main extends javax.swing.JFrame {
         btnAuthenticate = new javax.swing.JButton();
         txtpassword = new javax.swing.JPasswordField();
         mainPanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -192,83 +195,111 @@ public class Main extends javax.swing.JFrame {
         setTitle("Login Page");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginPanel.setBackground(new java.awt.Color(51, 51, 255));
+        loginPanel.setBackground(new java.awt.Color(224, 238, 238));
         loginPanel.setForeground(new java.awt.Color(0, 102, 255));
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setText("Login");
-        loginPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
-
+        jLabel5.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         jLabel5.setText("Username");
-        loginPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        loginPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         jLabel6.setText("Password");
-        loginPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        loginPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, -1));
 
         txtuname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtunameActionPerformed(evt);
             }
         });
-        loginPanel.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 130, -1));
+        loginPanel.add(txtuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 210, 30));
 
-        jLabel7.setText("Role");
-        loginPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
-
+        chkbxPatient.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         chkbxPatient.setText("Patient");
         chkbxPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbxPatientActionPerformed(evt);
             }
         });
-        loginPanel.add(chkbxPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
+        loginPanel.add(chkbxPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
+        chkbxSysAdmin.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         chkbxSysAdmin.setText("System Admin");
         chkbxSysAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbxSysAdminActionPerformed(evt);
             }
         });
-        loginPanel.add(chkbxSysAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, 20));
+        loginPanel.add(chkbxSysAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, 20));
 
+        chkbxCommAdmin.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         chkbxCommAdmin.setText("Community Admin");
         chkbxCommAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbxCommAdminActionPerformed(evt);
             }
         });
-        loginPanel.add(chkbxCommAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+        loginPanel.add(chkbxCommAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
 
+        chkbxHospAdmin.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         chkbxHospAdmin.setText("Hospital Admin");
         chkbxHospAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbxHospAdminActionPerformed(evt);
             }
         });
-        loginPanel.add(chkbxHospAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        loginPanel.add(chkbxHospAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, -1));
 
+        chkbxDoctor.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         chkbxDoctor.setText("Doctor");
         chkbxDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbxDoctorActionPerformed(evt);
             }
         });
-        loginPanel.add(chkbxDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+        loginPanel.add(chkbxDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, -1));
 
-        btnAuthenticate.setBackground(new java.awt.Color(102, 102, 255));
+        btnAuthenticate.setBackground(new java.awt.Color(0, 153, 153));
+        btnAuthenticate.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 13)); // NOI18N
         btnAuthenticate.setText("Authenticate");
         btnAuthenticate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAuthenticateActionPerformed(evt);
             }
         });
-        loginPanel.add(btnAuthenticate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
-        loginPanel.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 130, -1));
-        loginPanel.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-350, -160, 1070, 600));
+        loginPanel.add(btnAuthenticate, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 450, 140, 30));
+        loginPanel.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 210, 30));
 
-        getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 360, 320));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 600));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Login");
+        mainPanel.add(jLabel4);
+
+        jLabel3.setText("jLabel3");
+        mainPanel.add(jLabel3);
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        jLabel10.setText("Mass General Hospital");
+        mainPanel.add(jLabel10);
+
+        loginPanel.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-270, -160, 990, 70));
+
+        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel8.setText("Select a login type below");
+        loginPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 440, 30));
+
+        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel11.setText("Please enter your credentials");
+        loginPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 330, 30));
+
+        jLabel9.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel9.setText("Mass General Hospital");
+        loginPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
+
+        getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 580));
 
         setSize(new java.awt.Dimension(1084, 607));
         setLocationRelativeTo(null);
@@ -467,12 +498,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkbxPatient;
     private javax.swing.JCheckBox chkbxSysAdmin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPasswordField txtpassword;

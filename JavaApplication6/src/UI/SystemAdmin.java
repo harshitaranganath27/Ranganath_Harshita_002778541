@@ -86,22 +86,26 @@ public class SystemAdmin extends javax.swing.JPanel {
         btnhome = new javax.swing.JButton();
         Patients1 = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtuname = new javax.swing.JTextField();
         txtpassword = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         chkbxCommAdmin = new javax.swing.JCheckBox();
         chkbxHospAdmin = new javax.swing.JCheckBox();
         chkbxDoctor = new javax.swing.JCheckBox();
         chkbxPatient = new javax.swing.JCheckBox();
         brncreatecredentials = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
+        contorlPanel.setBackground(new java.awt.Color(238, 219, 240));
+
+        contorlPanel1.setBackground(new java.awt.Color(238, 219, 240));
         contorlPanel1.setForeground(new java.awt.Color(204, 0, 51));
 
+        btnCity1.setForeground(new java.awt.Color(0, 204, 204));
         btnCity1.setText("City");
         btnCity1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,13 +113,15 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
-        btnCitizen.setText("Citizens");
+        btnCitizen.setForeground(new java.awt.Color(0, 204, 204));
+        btnCitizen.setText("People");
         btnCitizen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCitizenActionPerformed(evt);
             }
         });
 
+        btnHospital.setForeground(new java.awt.Color(0, 204, 204));
         btnHospital.setText("Hospitals");
         btnHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +129,7 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        btnDoctors.setForeground(new java.awt.Color(0, 204, 204));
         btnDoctors.setText("Doctors");
         btnDoctors.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +137,7 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        Patients.setForeground(new java.awt.Color(0, 204, 204));
         Patients.setText("Patients");
         Patients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,6 +145,7 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        btnlogout.setForeground(new java.awt.Color(0, 204, 204));
         btnlogout.setText("Logout");
         btnlogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +153,7 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        btnhome.setForeground(new java.awt.Color(0, 204, 204));
         btnhome.setText("Home");
         btnhome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +161,7 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        Patients1.setForeground(new java.awt.Color(0, 204, 204));
         Patients1.setText("View Doctors");
         Patients1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +208,7 @@ public class SystemAdmin extends javax.swing.JPanel {
                 .addComponent(Patients1)
                 .addGap(18, 18, 18)
                 .addComponent(btnlogout)
-                .addContainerGap(598, Short.MAX_VALUE))
+                .addContainerGap(563, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout contorlPanelLayout = new javax.swing.GroupLayout(contorlPanel);
@@ -205,29 +216,27 @@ public class SystemAdmin extends javax.swing.JPanel {
         contorlPanelLayout.setHorizontalGroup(
             contorlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contorlPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(contorlPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contorlPanelLayout.setVerticalGroup(
             contorlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contorlPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(90, 90, 90)
                 .addComponent(contorlPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(1031, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(contorlPanel);
 
+        workArea.setBackground(new java.awt.Color(246, 241, 255));
         workArea.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel2.setText("Welcome System Admin");
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel3.setText("Credential Creation");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Choose any of the features mentioned in the left panel");
-
-        jLabel4.setText("Set up credentials for the features below");
+        jLabel4.setText("Select role to create credentials");
 
         txtuname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,8 +247,6 @@ public class SystemAdmin extends javax.swing.JPanel {
         jLabel5.setText("Username");
 
         jLabel6.setText("Password");
-
-        jLabel7.setText("Role");
 
         chkbxCommAdmin.setText("Community Admin");
         chkbxCommAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -269,6 +276,8 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        brncreatecredentials.setBackground(new java.awt.Color(204, 204, 255));
+        brncreatecredentials.setForeground(new java.awt.Color(255, 255, 255));
         brncreatecredentials.setText("Create Credentials");
         brncreatecredentials.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,72 +285,70 @@ public class SystemAdmin extends javax.swing.JPanel {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel7.setText("Set username and password");
+
+        jLabel8.setFont(new java.awt.Font("PT Serif Caption", 1, 48)); // NOI18N
+        jLabel8.setText("Admin Page");
+
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(364, 364, 364)
+                .addGap(276, 276, 276)
                 .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabel8)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
+                    .addComponent(chkbxCommAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkbxHospAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkbxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(chkbxPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(workAreaLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txtuname, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(workAreaLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
-                        .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(workAreaLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel7)
-                        .addGap(34, 34, 34)
-                        .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkbxCommAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chkbxPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chkbxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chkbxHospAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workAreaLayout.createSequentialGroup()
-                        .addComponent(brncreatecredentials)
-                        .addGap(245, 245, 245)))
-                .addContainerGap(419, Short.MAX_VALUE))
+                        .addGap(3, 3, 3)
+                        .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(brncreatecredentials)
+                            .addGroup(workAreaLayout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtuname, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workAreaLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2)
+                .addGap(100, 100, 100)
+                .addComponent(jLabel8)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(chkbxCommAdmin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chkbxHospAdmin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chkbxDoctor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chkbxPatient)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtuname, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(workAreaLayout.createSequentialGroup()
-                        .addComponent(chkbxCommAdmin)
-                        .addGap(18, 18, 18)
-                        .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(workAreaLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(chkbxPatient))
-                            .addComponent(chkbxDoctor)))
-                    .addGroup(workAreaLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(chkbxHospAdmin)))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
+                .addGroup(workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
                 .addComponent(brncreatecredentials)
-                .addContainerGap(726, Short.MAX_VALUE))
+                .addContainerGap(1554, Short.MAX_VALUE))
         );
 
         workAreaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtpassword, txtuname});
@@ -503,12 +510,12 @@ public class SystemAdmin extends javax.swing.JPanel {
     private javax.swing.JPanel contorlPanel;
     private javax.swing.JPanel contorlPanel1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField txtpassword;
     private javax.swing.JTextField txtuname;
     private javax.swing.JPanel workArea;

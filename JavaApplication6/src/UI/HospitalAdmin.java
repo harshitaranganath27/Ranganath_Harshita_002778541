@@ -53,6 +53,9 @@ public class HospitalAdmin extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        jPanel2.setBackground(new java.awt.Color(245, 238, 238));
+
+        jButton1.setFont(new java.awt.Font("PT Serif", 0, 13)); // NOI18N
         jButton1.setText("Patient");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +63,7 @@ public class HospitalAdmin extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("PT Serif", 0, 13)); // NOI18N
         jButton2.setText("Hospital");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +71,7 @@ public class HospitalAdmin extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("PT Serif", 0, 13)); // NOI18N
         jButton3.setText("Doctor");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +79,7 @@ public class HospitalAdmin extends javax.swing.JPanel {
             }
         });
 
+        btnexit.setFont(new java.awt.Font("PT Serif", 0, 13)); // NOI18N
         btnexit.setText("Exit");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,16 +114,18 @@ public class HospitalAdmin extends javax.swing.JPanel {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(btnexit)
-                .addContainerGap(569, Short.MAX_VALUE))
+                .addContainerGap(566, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(jPanel2);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel2.setText("Welcome Hospital Admin");
+        jPanel4.setBackground(new java.awt.Color(245, 238, 238));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Choose any of the features mentioned in the left panel");
+        jLabel2.setFont(new java.awt.Font("PT Serif", 0, 36)); // NOI18N
+        jLabel2.setText("Hospital Administration Page");
+
+        jLabel3.setFont(new java.awt.Font("PT Serif", 0, 18)); // NOI18N
+        jLabel3.setText("Choose options to get started");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -125,10 +133,12 @@ public class HospitalAdmin extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(248, 248, 248)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel3)))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +147,7 @@ public class HospitalAdmin extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(742, Short.MAX_VALUE))
+                .addContainerGap(741, Short.MAX_VALUE))
         );
 
         SplitPane.setRightComponent(jPanel4);
@@ -150,7 +160,7 @@ public class HospitalAdmin extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SplitPane)
+            .addComponent(SplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

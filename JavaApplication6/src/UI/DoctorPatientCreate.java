@@ -92,8 +92,9 @@ public class DoctorPatientCreate extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRecords = new javax.swing.JTable();
 
+        jLabel1.setBackground(new java.awt.Color(232, 225, 225));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Monitor Patients");
+        jLabel1.setText("Record Patient details");
 
         jLabel2.setText("Patient Name");
 
