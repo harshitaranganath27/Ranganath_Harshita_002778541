@@ -72,7 +72,6 @@ public class CreateHospAdmin extends javax.swing.JPanel {
         txtHospid = new javax.swing.JTextField();
         btncreate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRecords = new javax.swing.JTable();
         lblCity4 = new javax.swing.JLabel();
@@ -91,6 +90,8 @@ public class CreateHospAdmin extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         btnpopulate = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 204));
 
         comboBoxCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxCity.addActionListener(new java.awt.event.ActionListener() {
@@ -127,10 +128,8 @@ public class CreateHospAdmin extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Al Nile", 0, 36)); // NOI18N
         jLabel1.setText("Hospital ");
-
-        jLabel2.setText("Create Hospitals ");
 
         tblRecords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -217,10 +216,6 @@ public class CreateHospAdmin extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(493, 493, 493))
             .addGroup(layout.createSequentialGroup()
                 .addGap(209, 209, 209)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,8 +269,8 @@ public class CreateHospAdmin extends javax.swing.JPanel {
                             .addComponent(comboBoxCommunity1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboBoxCity1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(484, 484, 484)
-                        .addComponent(jLabel2)))
+                        .addGap(459, 459, 459)
+                        .addComponent(jLabel1)))
                 .addContainerGap(139, Short.MAX_VALUE))
         );
 
@@ -288,11 +283,9 @@ public class CreateHospAdmin extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(23, 23, 23)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -345,7 +338,7 @@ public class CreateHospAdmin extends javax.swing.JPanel {
                     .addComponent(jButton2)
                     .addComponent(btnpopulate)
                     .addComponent(btnedit))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {comboBoxCity, lblCity});
@@ -488,7 +481,6 @@ public class CreateHospAdmin extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblCity1;
